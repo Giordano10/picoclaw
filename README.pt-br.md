@@ -619,6 +619,13 @@ Todos os caminhos compartilham a mesma restrição de workspace — nao há como
 
 ### Heartbeat (Tarefas Periódicas)
 
+O `HEARTBEAT.md` é a lista de tarefas recorrentes que o agente executa automaticamente. Ele deve ficar na raiz do workspace (ex.: `~/.picoclaw/workspace/HEARTBEAT.md`) e, se não existir, o PicoClaw cria um modelo na primeira execução.
+
+**Passo a passo rápido**
+- Certifique-se de que o heartbeat está habilitado (padrão: `true`).
+- Edite `HEARTBEAT.md` com as tarefas que quer rodar periodicamente.
+- Opcional: ajuste o intervalo com `PICOCLAW_HEARTBEAT_INTERVAL` ou pelo arquivo de configuração.
+
 O PicoClaw pode executar tarefas periódicas automaticamente. Crie um arquivo `HEARTBEAT.md` no seu workspace:
 
 ```markdown
