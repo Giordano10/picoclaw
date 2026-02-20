@@ -43,9 +43,10 @@ func DefaultConfig() *Config {
 				AllowFrom:         FlexibleStringSlice{},
 			},
 			Discord: DiscordConfig{
-				Enabled:   false,
-				Token:     "",
-				AllowFrom: FlexibleStringSlice{},
+				Enabled:     false,
+				Token:       "",
+				AllowFrom:   FlexibleStringSlice{},
+				MentionOnly: false,
 			},
 			MaixCam: MaixCamConfig{
 				Enabled:   false,
@@ -264,6 +265,19 @@ func DefaultConfig() *Config {
 			},
 			Exec: ExecConfig{
 				EnableDenyPatterns: true,
+			},
+			Skills: SkillsToolsConfig{
+				Registries: SkillsRegistriesConfig{
+					ClawHub: ClawHubRegistryConfig{
+						Enabled: true,
+						BaseURL: "https://clawhub.ai",
+					},
+				},
+				MaxConcurrentSearches: 2,
+				SearchCache: SearchCacheConfig{
+					MaxSize:    50,
+					TTLSeconds: 300,
+				},
 			},
 		},
 		Heartbeat: HeartbeatConfig{
